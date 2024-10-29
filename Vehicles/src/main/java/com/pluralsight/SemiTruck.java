@@ -6,6 +6,11 @@ public class SemiTruck extends Vehicle {
     private float cargoWeight;
     private boolean hasTrailer;
 
+    public SemiTruck(float speedMax, float speedCurrent, boolean isManual, boolean isElectric, boolean isGasoline,
+                     String vehicleType, int fuelCapacity, int cargoCapacity, int numberOfPassengers, String color) {
+        super(speedMax, speedCurrent, isManual, isElectric, isGasoline, vehicleType, fuelCapacity, cargoCapacity, numberOfPassengers, color);
+    }
+
     public String getCargo() {
         return cargo;
     }

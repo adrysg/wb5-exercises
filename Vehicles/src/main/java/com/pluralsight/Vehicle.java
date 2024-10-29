@@ -15,6 +15,21 @@ public class Vehicle {
     float speedCurrent;
     float speedMax;
 
+
+    public Vehicle(float speedMax, float speedCurrent, boolean isManual, boolean isElectric, boolean isGasoline,
+                   String vehicleType, int fuelCapacity, int cargoCapacity, int numberOfPassengers, String color) {
+        this.speedMax = speedMax;
+        this.speedCurrent = speedCurrent;
+        this.isManual = isManual;
+        this.isElectric = isElectric;
+        this.isGasoline = isGasoline;
+        this.vehicleType = vehicleType;
+        this.fuelCapacity = fuelCapacity;
+        this.cargoCapacity = cargoCapacity;
+        this.numberOfPassengers = numberOfPassengers;
+        this.color = color;
+    }
+
     public String getVehicleType() {
         return vehicleType;
     }

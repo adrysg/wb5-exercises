@@ -5,6 +5,11 @@ public class HoverCraft extends Vehicle {
     private boolean onWater;
     private float hoverHeight;
 
+    public HoverCraft(float speedMax, float speedCurrent, boolean isManual, boolean isElectric, boolean isGasoline,
+                      String vehicleType, int fuelCapacity, int cargoCapacity, int numberOfPassengers, String color) {
+        super(speedMax, speedCurrent, isManual, isElectric, isGasoline, vehicleType, fuelCapacity, cargoCapacity, numberOfPassengers, color);
+    }
+
     public boolean isOnWater() {
         return onWater;
     }
