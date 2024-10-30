@@ -1,6 +1,5 @@
 package com.pluralsight;
 
-import java.time.LocalDate;
 
 public class Vehicle extends Asset {
 
