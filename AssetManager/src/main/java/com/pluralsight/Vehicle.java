@@ -1,18 +1,21 @@
 package com.pluralsight;
 
+import java.time.LocalDate;
+
 public class Vehicle extends Asset {
 
     private String makeModel;
-    private int year;
+    private String year;
     private int odometer;
 
     public Vehicle(String description, String dateAcquired, double originalCost,
-                   String makeModel, int year, int odometer) {
+                   String makeModel, String year, int odometer) {
         super(description, dateAcquired, originalCost);
         this.makeModel = makeModel;
         this.year = year;
         this.odometer = odometer;
     }
+
 
     public String getMakeModel() {
         return makeModel;
@@ -22,11 +25,11 @@ public class Vehicle extends Asset {
         this.makeModel = makeModel;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
@@ -39,20 +42,29 @@ public class Vehicle extends Asset {
     }
 
     @Override
-    public double getValue(){
-        System.out.println("What is your cars age range: ");
-        System.out.println("1 - 0-3 years old ");
-        System.out.println("2 - 4-6 years old ");
-        System.out.println("3 - 7-10 years old ");
-        System.out.println("4 - Over 10 years old ");
-        int selection = Console.PromptForInt("Enter selection: ");
+    public double getValue() {
+       int currentYear = 2024;
+       int ageRange = currentYear - Integer.parseInt(year);
+       double value = 0;
 
-        double value = 0;
-        if(selection == 1){
-            value = (0.03 * originalCost) -
+        if (ageRange <= 3) {
+            value = (0.03 * ageRange);
+        }
+        else if (ageRange >= 4 && ageRange <= 6) {
+            value = 0.06 * ageRange;
+        }
+        else if (ageRange >= 7 && ageRange <= 10) {
+            value = 0.08 * ageRange;
+        }
+        else if (ageRange > 10) {
+            return 1000;
         }
 
+        double currentValue = getOriginalCost() * (1 - value);
+        if (odometer > 100000 && !makeModel.toLowerCase().contains("Honda") && !makeModel.toLowerCase().contains("Toyota")) {
+            currentValue *= 0.75;
+        }
+        return currentValue;
     }
-
 
 }

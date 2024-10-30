@@ -4,7 +4,7 @@ package com.pluralsight;
 public class House extends Asset {
 
    private String address;
-   private int condition = Console.PromptForInt("1 - Excellent, 2 - Good, 3 - Fair, 4 - Poor");
+   private int condition; //("1 - Excellent, 2 - Good, 3 - Fair, 4 - Poor");
    private int squareFoot;
    private int lotSize;
 
