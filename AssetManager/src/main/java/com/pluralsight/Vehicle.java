@@ -38,4 +38,21 @@ public class Vehicle extends Asset {
         this.odometer = odometer;
     }
 
+    @Override
+    public double getValue(){
+        System.out.println("What is your cars age range: ");
+        System.out.println("1 - 0-3 years old ");
+        System.out.println("2 - 4-6 years old ");
+        System.out.println("3 - 7-10 years old ");
+        System.out.println("4 - Over 10 years old ");
+        int selection = Console.PromptForInt("Enter selection: ");
+
+        double value = 0;
+        if(selection == 1){
+            value = (0.03 * originalCost) -
+        }
+
+    }
+
+
 }
