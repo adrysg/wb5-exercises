@@ -7,6 +7,14 @@ public class Cat extends Animal {
         System.out.println("MEOW");
     }
 
+    public void sayHello(){
+        System.out.println("Meow");
+    }
+
+    public void scratch(){
+        System.out.println("Skkkkkkkkkkkrsshh");
+    }
+
     public Cat(){
         super("Unnamed");
         super.setSpecies(" Cat");

@@ -4,6 +4,16 @@ public class Dog extends Animal {
 
     private String breed;
 
+    public Dog(String name){
+        super(name);
+        System.out.println("TRACE -- from Dog constructor");
+        super.setSpecies(" Dog");
+    }
+
+    public void sayHello(){
+        System.out.println("Bark");
+    }
+
     public String getBreed() {
         return breed;
     }
@@ -12,7 +22,7 @@ public class Dog extends Animal {
         this.breed = breed;
     }
 
-    private void bark() {
+    public void bark() {
         if(super.getWeight() < 50){
             System.out.println("BARK");
         }

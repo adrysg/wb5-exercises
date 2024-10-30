@@ -6,6 +6,22 @@ public class Animal {
     private int age;
     private String species;
 
+
+    public void sayHello(){
+        System.out.println("[awkward silence]");
+    }
+
+    public Animal(String name){
+        System.out.println("TRACE -- from Animal constructor");
+        this.species = "Unknown";
+        this.name = name;
+    }
+
+
+    public void setSpecies(String species) {
+        this.species = species;
+    }
+
     public String getSpecies() {
         return species;
     }
@@ -32,6 +48,11 @@ public class Animal {
 
     public void eat(float amountOfFood) {
         this.weight += amountOfFood;
+    }
+
+    @Override
+    public String toString(){
+        return this.name + " is my pet" + this.species;
     }
 
 }
